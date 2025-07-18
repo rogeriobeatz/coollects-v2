@@ -1,0 +1,51 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Coollects - App para Colecionadores",
+  "orientation": "portrait",
+  "shortcuts": [
+    {
+      "name": "Nova Coleção",
+      "short_name": "Nova Coleção",
+      "description": "Nova Coleção",
+      "url": "/home.php?page=new_col",
+      "icons": [{ "src": "/icons/nova-colecao.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Novo Item",
+      "short_name": "Novo Item",
+      "description": "Novo Item",
+      "url": "/home.php?page=new_item",
+      "icons": [{ "src": "/icons/novo-item.png", "sizes": "192x192" }]
+    } ,   {
+      "name": "Minhas Coleções",
+      "short_name": "Minhas Coleções",
+      "description": "Minhas Coleções",
+      "url": "/home.php?page=listar-colecoes",
+      "icons": [{ "src": "/icons/colecoes.png", "sizes": "192x192" }]
+    }  ,  {
+      "name": "Meus Itens",
+      "short_name": "Meus Itens",
+      "description": "Meus Itens",
+      "url": "/home.php?page=list-item",
+      "icons": [{ "src": "/icons/itens.png", "sizes": "192x192" }]
+    }
+  ],
+  "scope": "/",
+  "short_name": "Coollects",
+  "start_url": "/index.php",
+  "icons": [
+    {
+      "src": "icons/maskable-icon.png",
+      "sizes": "512x512"
+    }
+  ],
+  "theme_color": "#F15700",
+  "description": "Coollects é um APP desenvolvido especialmente para colecionadores!",
+  "lang": "pt",
+  "id": "/index.php",
+  "categories": [
+    "entertainment"
+  ]
+}

@@ -1,0 +1,46 @@
+# Arquivos de configuração sensíveis
+config.php
+.env
+
+# Logs
+log/
+*.log
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.cache
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Arquivos de upload
+uploads/
+temp/
+
+# Arquivos de backup
+*.bak
+*.backup
+
+# Dependências (se houver)
+node_modules/
+vendor/
+
+# Arquivos de build
+dist/
+build/
+
+# Arquivos de sessão PHP
+sessions/
+
+# Arquivos de cache
+cache/ 
