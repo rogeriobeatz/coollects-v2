@@ -1,270 +1,319 @@
-# 🎯 Coollects - App para Colecionadores
+# 🎯 Coollects - Sistema de Coleções
 
-Uma plataforma web moderna e segura para colecionadores gerenciarem suas coleções de forma organizada e intuitiva.
+[![PHP](https://img.shields.io/badge/PHP-8.0+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps/)
+
+> **Sistema completo e seguro para gerenciamento de coleções pessoais** 🚀
+
+## 📋 Índice
+
+- [✨ Características](#-características)
+- [🛠️ Tecnologias](#️-tecnologias)
+- [📦 Instalação](#-instalação)
+- [⚙️ Configuração](#️-configuração)
+- [🔐 Segurança](#-segurança)
+- [📱 PWA](#-pwa)
+- [🎨 Personalização](#-personalização)
+- [🐛 Troubleshooting](#-troubleshooting)
+- [🤝 Contribuição](#-contribuição)
+- [📄 Licença](#-licença)
 
 ## ✨ Características
 
-- 🔐 **Sistema de autenticação seguro** com hash de senhas
-- 🛡️ **Proteção contra SQL Injection** usando prepared statements
-- 📱 **Design responsivo** para desktop e mobile
-- 🎨 **Interface moderna** com animações suaves
-- 📊 **Gestão completa** de coleções e itens
-- 🖼️ **Upload de imagens** com integração ImgBB
-- 📈 **Logs de atividades** para auditoria
-- 🔍 **Busca e filtros** avançados
-- 📱 **PWA** (Progressive Web App) para instalação
+### 🔐 **Segurança Avançada**
+- ✅ **Prepared Statements** - Proteção contra SQL Injection
+- ✅ **Hash de Senhas** - Bcrypt com custo configurável
+- ✅ **Sanitização de Entrada** - Proteção contra XSS
+- ✅ **Sessões Seguras** - Configurações HTTPOnly e Secure
+- ✅ **Validação Dupla** - Server-side e Client-side
+- ✅ **Log de Atividades** - Auditoria completa
 
-## 🚀 Instalação
+### 🎯 **Funcionalidades Principais**
+- 👤 **Sistema de Usuários** - Registro e login seguro
+- 📚 **Gerenciamento de Coleções** - CRUD completo
+- 🎨 **Categorização** - Sistema flexível de categorias
+- 🖼️ **Upload de Imagens** - Integração com ImgBB API
+- 📱 **Interface Responsiva** - Mobile-first design
+- 🔍 **Busca e Filtros** - Navegação intuitiva
 
-### Pré-requisitos
+### 🎨 **Interface Moderna**
+- 🎭 **Animações Lottie** - Introdução elegante
+- 🎨 **Design System** - Componentes consistentes
+- 📱 **PWA Ready** - Instalação como app nativo
+- 🌙 **Tema Adaptativo** - Suporte a modo escuro
+- ♿ **Acessibilidade** - ARIA labels e navegação por teclado
 
-- PHP 7.4 ou superior
-- MySQL 5.7 ou superior
+## 🛠️ Tecnologias
+
+### **Backend**
+- **PHP 8.0+** - Linguagem principal
+- **MySQL 8.0+** - Banco de dados
+- **MySQLi** - Driver de conexão
+
+### **Frontend**
+- **HTML5** - Estrutura semântica
+- **CSS3** - Estilos modernos com variáveis
+- **JavaScript ES6+** - Interatividade
+- **Lottie** - Animações vetoriais
+
+### **APIs e Serviços**
+- **ImgBB API** - Upload de imagens
+- **PWA Manifest** - Configuração de app
+- **Service Worker** - Cache offline
+
+## 📦 Instalação
+
+### **Pré-requisitos**
+- PHP 8.0 ou superior
+- MySQL 8.0 ou superior
 - Servidor web (Apache/Nginx)
-- Extensões PHP: mysqli, json, mbstring
+- Extensões PHP: mysqli, json, session
 
-### Passos de Instalação
+### **Passo a Passo**
 
-1. **Clone ou baixe o projeto**
-   ```bash
-   git clone https://github.com/seu-usuario/coollects.git
-   cd coollects
-   ```
+1. **Clone o repositório**
+```bash
+git clone https://github.com/seu-usuario/coollects.git
+cd coollects
+```
 
 2. **Configure o banco de dados**
-   - Crie um banco de dados MySQL
-   - Execute o arquivo `database_setup.sql` no seu banco de dados
-   - Isso criará todas as tabelas necessárias e dados iniciais
+```bash
+# Acesse seu MySQL
+mysql -u root -p
+
+# Crie o banco de dados
+CREATE DATABASE coollects CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+# Execute o script de setup
+mysql -u root -p coollects < database_setup.sql
+```
 
 3. **Configure as credenciais**
-   - Edite o arquivo `config.php`
-   - Atualize as constantes de conexão com o banco:
-   ```php
-   define('HOST', 'seu-host');
-   define('USER', 'seu-usuario');
-   define('PASS', 'sua-senha');
-   define('BASE', 'seu-banco');
-   ```
-
-4. **Configure o upload de imagens (opcional)**
-   - Crie uma conta no [ImgBB](https://imgbb.com/)
-   - Obtenha sua API key
-   - Atualize a chave no arquivo `novo-item.php` (linha ~150)
-
-5. **Configure as permissões**
-   ```bash
-   chmod 755 log/
-   chmod 644 log/error.log
-   ```
-
-6. **Acesse a aplicação**
-   - Abra seu navegador
-   - Acesse: `http://localhost/coollects`
-
-## 📁 Estrutura do Projeto
-
-```
-coollects/
-├── acesso/                 # Sistema de autenticação
-│   ├── login.php          # Página de login
-│   ├── novo-usuario.php   # Cadastro de usuários
-│   └── salvar-usuario.php # Processamento de cadastro
-├── assets/                # Recursos estáticos
-│   ├── intro-anim.json    # Animações Lottie
-│   └── WorkSans-*.ttf     # Fontes
-├── icons/                 # Ícones PWA
-├── images/                # Imagens do sistema
-├── js/                    # JavaScript
-├── log/                   # Logs de erro
-├── style/                 # Estilos CSS
-├── config.php             # Configurações
-├── database_setup.sql     # Estrutura do banco
-├── index.php              # Página inicial
-├── home.php               # Dashboard principal
-├── pre-home.php           # Tela de boas-vindas
-├── nova-colecao.php       # Criação de coleções
-├── novo-item.php          # Adição de itens
-├── listar-colecoes.php    # Lista de coleções
-├── listar-item.php        # Lista de itens
-├── colecao.php            # Visualização de coleção
-├── item.php               # Visualização de item
-├── salvar-collection.php  # Processamento de coleções
-├── salvar-item.php        # Processamento de itens
-├── logout.php             # Logout
-├── manifest.json          # Configuração PWA
-├── sw.js                  # Service Worker
-└── README.md              # Este arquivo
-```
-
-## 🔧 Configuração Avançada
-
-### Variáveis de Ambiente
-
-Para maior segurança, você pode usar variáveis de ambiente:
-
-```php
-// config.php
-define('HOST', $_ENV['DB_HOST'] ?? 'localhost');
-define('USER', $_ENV['DB_USER'] ?? 'root');
-define('PASS', $_ENV['DB_PASS'] ?? '');
-define('BASE', $_ENV['DB_NAME'] ?? 'coollects');
-```
-
-### Configuração de Sessão
-
-O sistema já está configurado com sessões seguras, mas você pode personalizar:
-
-```php
-// config.php
-ini_set('session.cookie_httponly', 1);
-ini_set('session.cookie_secure', 1); // Para HTTPS
-ini_set('session.use_strict_mode', 1);
-ini_set('session.gc_maxlifetime', 3600); // 1 hora
-```
-
-### Logs e Monitoramento
-
-Os logs são salvos em `log/error.log`. Para monitoramento:
-
 ```bash
-# Ver logs em tempo real
-tail -f log/error.log
+# Copie o arquivo de exemplo
+cp config.example.php config.php
 
-# Limpar logs antigos
-find log/ -name "*.log" -mtime +30 -delete
+# Edite com suas credenciais
+nano config.php
 ```
 
-## 🎨 Personalização
-
-### Cores e Tema
-
-Edite as variáveis CSS em `style/style.css`:
-
-```css
-:root {
-    --color-primary: #650fee;      /* Cor principal */
-    --color-secondary: #F15700;    /* Cor secundária */
-    --color-grey: #F3F3F3;         /* Cor de fundo */
-    --color-white: #fffefb;        /* Cor branca */
-    --color-dark: #1b1a1b;         /* Cor escura */
-}
+4. **Configure o servidor web**
+```apache
+# Apache (.htaccess já incluído)
+# Certifique-se que mod_rewrite está habilitado
 ```
 
-### Categorias
-
-Para adicionar novas categorias, edite o arquivo `database_setup.sql` ou insira diretamente no banco:
-
-```sql
-INSERT INTO categorias (name_cat, emoji_cat, desc_cat) 
-VALUES ('Nova Categoria', '🎯', 'Descrição da categoria');
+5. **Configure permissões**
+```bash
+# Crie diretórios necessários
+mkdir log
+mkdir uploads
+chmod 755 log uploads
 ```
 
-## 🔒 Segurança
+## ⚙️ Configuração
 
-### Recursos de Segurança Implementados
+### **Arquivo config.php**
+```php
+// Configurações do banco de dados
+define('HOST', 'localhost');
+define('USER', 'seu_usuario');
+define('PASS', 'sua_senha');
+define('BASE', 'coollects');
 
-- ✅ **Prepared Statements** para prevenir SQL Injection
+// Configurações da aplicação
+define('APP_NAME', 'Coollects');
+define('APP_VERSION', '2.0.0');
+define('APP_URL', 'https://seu-dominio.com');
+
+// Configurações de segurança
+define('HASH_COST', 12);
+define('SESSION_TIMEOUT', 3600);
+```
+
+### **Variáveis de Ambiente (Opcional)**
+```bash
+# .env (se implementado)
+DB_HOST=localhost
+DB_USER=seu_usuario
+DB_PASS=sua_senha
+DB_NAME=coollects
+```
+
+### **Configurações de Sessão**
+```php
+// Configurações automáticas no config.php
+ini_set('session.cookie_httponly', 1);
+ini_set('session.cookie_secure', 1);
+ini_set('session.use_strict_mode', 1);
+```
+
+## 🔐 Segurança
+
+### **Implementado**
+- ✅ **Prepared Statements** em todas as queries
 - ✅ **Hash de senhas** com bcrypt
-- ✅ **Sanitização de inputs** 
-- ✅ **Validação de dados** no cliente e servidor
-- ✅ **Controle de sessão** seguro
-- ✅ **Logs de atividades** para auditoria
-- ✅ **Verificação de permissões** por usuário
-- ✅ **Headers de segurança** configurados
+- ✅ **Sanitização de entrada** global
+- ✅ **Validação server-side** rigorosa
+- ✅ **Sessões seguras** com configurações adequadas
+- ✅ **Log de atividades** para auditoria
+- ✅ **Proteção contra XSS** com htmlspecialchars
 
-### Recomendações Adicionais
+### **Recomendações Adicionais**
+- 🔒 **HTTPS** - Use sempre em produção
+- 🔒 **Rate Limiting** - Implemente limitação de tentativas
+- 🔒 **2FA** - Autenticação de dois fatores
+- 🔒 **Backup** - Backup regular do banco
+- 🔒 **Monitoramento** - Logs de segurança
 
-1. **Use HTTPS** em produção
-2. **Configure um firewall** no servidor
-3. **Mantenha o PHP atualizado**
-4. **Faça backups regulares** do banco de dados
-5. **Monitore os logs** regularmente
+## 📱 PWA
 
-## 📱 PWA (Progressive Web App)
+### **Características**
+- 📱 **Instalável** - Adicione à tela inicial
+- 🔄 **Offline** - Cache de recursos essenciais
+- 📲 **App-like** - Experiência nativa
+- 🔔 **Notificações** - Push notifications (futuro)
 
-O Coollects funciona como um PWA, permitindo:
-
-- 📲 **Instalação** no dispositivo
-- 🔄 **Funcionamento offline** básico
-- 📱 **Interface nativa** no mobile
-- 🔔 **Notificações push** (futuro)
-
-### Configuração PWA
-
-Edite `manifest.json` para personalizar:
-
+### **Configuração**
 ```json
+// manifest.json
 {
-  "name": "Coollects - App para Colecionadores",
+  "name": "Coollects",
   "short_name": "Coollects",
-  "theme_color": "#F15700",
+  "description": "Sistema de Coleções",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#6366f1",
   "background_color": "#ffffff"
 }
 ```
 
-## 🐛 Solução de Problemas
+## 🎨 Personalização
 
-### Problemas Comuns
+### **Cores e Temas**
+```css
+/* style/style.css */
+:root {
+  --primary-color: #6366f1;
+  --secondary-color: #8b5cf6;
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --warning-color: #f59e0b;
+  --info-color: #3b82f6;
+}
+```
 
-1. **Erro de conexão com banco**
-   - Verifique as credenciais em `config.php`
-   - Confirme se o MySQL está rodando
+### **Categorias**
+```sql
+-- Adicione novas categorias
+INSERT INTO categorias (name_cat, emoji_cat, desc_cat) 
+VALUES ('Livros', '📚', 'Coleção de livros');
+```
 
-2. **Página em branco**
-   - Verifique os logs em `log/error.log`
-   - Confirme se o PHP tem permissão de escrita
+### **Ícones e Imagens**
+- Substitua arquivos em `/icons/`
+- Atualize `manifest.json`
+- Modifique `sw.js` se necessário
 
-3. **Upload de imagens não funciona**
-   - Verifique a API key do ImgBB
-   - Confirme se o PHP tem extensão cURL
+## 🐛 Troubleshooting
 
-4. **Sessão não persiste**
-   - Verifique as permissões da pasta de sessão
-   - Confirme se o PHP tem extensão session
+### **Problemas Comuns**
 
-### Logs de Debug
+#### **Erro de Conexão com Banco**
+```bash
+# Verifique as credenciais em config.php
+# Teste a conexão
+php -r "include 'config.php'; echo 'Conexão OK';"
+```
 
-Para ativar logs detalhados, edite `config.php`:
+#### **Erro de Permissões**
+```bash
+# Configure permissões corretas
+chmod 755 log uploads
+chmod 644 config.php
+```
 
-```php
+#### **Página em Branco**
+```bash
+# Ative logs de erro
 error_reporting(E_ALL);
-ini_set('display_errors', 1); // Apenas em desenvolvimento
+ini_set('display_errors', 1);
+```
+
+#### **Upload de Imagens Não Funciona**
+```bash
+# Verifique a API key do ImgBB
+# Teste a conexão com a API
+curl -X POST "https://api.imgbb.com/1/upload" \
+  -F "key=SUA_API_KEY" \
+  -F "image=@teste.jpg"
+```
+
+### **Logs e Debug**
+```bash
+# Verifique logs de erro
+tail -f log/error.log
+
+# Log de atividades
+SELECT * FROM activity_log ORDER BY timestamp DESC LIMIT 10;
 ```
 
 ## 🤝 Contribuição
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
+### **Como Contribuir**
+1. **Fork** o projeto
+2. **Crie** uma branch para sua feature
+3. **Commit** suas mudanças
+4. **Push** para a branch
+5. **Abra** um Pull Request
+
+### **Padrões de Código**
+- **PHP**: PSR-12
+- **CSS**: BEM methodology
+- **JavaScript**: ES6+ standards
+- **Commits**: Conventional Commits
+
+### **Testes**
+```bash
+# Execute testes (se implementados)
+php vendor/bin/phpunit
+
+# Verifique sintaxe
+php -l arquivo.php
+```
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 👥 Suporte
+## 📞 Suporte
 
-- 📧 **Email**: suporte@coollects.com
-- 💬 **Discord**: [Link do servidor]
-- 📖 **Documentação**: [Link da documentação]
+- 📧 **Email**: rogeriobeatz@gmail.com
+- 🐛 **Issues**: [GitHub Issues](https://github.com/seu-usuario/coollects/issues)
+- 📖 **Documentação**: [Wiki](https://github.com/seu-usuario/coollects/wiki)
 
-## 🔄 Changelog
+## 📈 Roadmap
 
-### v2.0.0 (Atual)
-- ✨ Sistema de autenticação seguro
-- 🛡️ Proteção contra SQL Injection
-- 📱 Design responsivo melhorado
-- 🎨 Interface moderna
-- 📊 Gestão completa de coleções
-- 🔍 Sistema de busca
-- 📱 Suporte PWA
+### **v2.1.0** (Próxima versão)
+- 🔍 **Sistema de busca avançada**
+- 📊 **Estatísticas e relatórios**
+- 🔔 **Notificações push**
+- 🌙 **Modo escuro completo**
 
-### v1.0.0
-- 🎯 Versão inicial
-- 📝 Funcionalidades básicas
-- 🎨 Design simples
+### **v2.2.0** (Futuro)
+- 📱 **App nativo** (React Native)
+- 🔗 **API REST** completa
+- 🤖 **Integração com IA**
+- 🌍 **Multi-idioma**
 
 ---
 
-**Desenvolvido com ❤️ para a comunidade de colecionadores brasileiros** 
+<div align="center">
+  <p>Feito com ❤️ por <strong>Rogério</strong></p>
+  <p>⭐ Se este projeto te ajudou, considere dar uma estrela!</p>
+</div> 
