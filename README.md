@@ -1,319 +1,336 @@
-# 🎯 Coollects - Sistema de Coleções
+# Coollects v2 - Plataforma Moderna para Colecionadores
 
-[![PHP](https://img.shields.io/badge/PHP-8.0+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
-[![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.0+-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19.0+-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4+-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Prisma](https://img.shields.io/badge/Prisma-5.7+-2D3748?style=for-the-badge&logo=prisma&logoColor=white)](https://www.prisma.io)
 
-> **Sistema completo e seguro para gerenciamento de coleções pessoais** 🚀
+> **Catalogar, organizar e compartilhar suas coleções com inteligência artificial** 🚀
 
-## 📋 Índice
+**v2.0 - Completamente reescrito em React/Next.js com IA Vision, Autenticação Segura, e Deploy Pronto para Produção**
 
-- [✨ Características](#-características)
-- [🛠️ Tecnologias](#️-tecnologias)
-- [📦 Instalação](#-instalação)
-- [⚙️ Configuração](#️-configuração)
-- [🔐 Segurança](#-segurança)
-- [📱 PWA](#-pwa)
-- [🎨 Personalização](#-personalização)
-- [🐛 Troubleshooting](#-troubleshooting)
-- [🤝 Contribuição](#-contribuição)
-- [📄 Licença](#-licença)
+## Índice
 
-## ✨ Características
+- [Características](#-características)
+- [Tecnologias](#️-tecnologias)
+- [Quick Start](#-quick-start)
+- [Instalação Completa](#-instalação-completa)
+- [Deploy](#-deploy)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Documentação](#-documentação)
+- [Licença](#-licença)
 
-### 🔐 **Segurança Avançada**
-- ✅ **Prepared Statements** - Proteção contra SQL Injection
-- ✅ **Hash de Senhas** - Bcrypt com custo configurável
-- ✅ **Sanitização de Entrada** - Proteção contra XSS
-- ✅ **Sessões Seguras** - Configurações HTTPOnly e Secure
-- ✅ **Validação Dupla** - Server-side e Client-side
-- ✅ **Log de Atividades** - Auditoria completa
+## Características
 
-### 🎯 **Funcionalidades Principais**
-- 👤 **Sistema de Usuários** - Registro e login seguro
-- 📚 **Gerenciamento de Coleções** - CRUD completo
-- 🎨 **Categorização** - Sistema flexível de categorias
-- 🖼️ **Upload de Imagens** - Integração com ImgBB API
-- 📱 **Interface Responsiva** - Mobile-first design
-- 🔍 **Busca e Filtros** - Navegação intuitiva
+### IA Vision
+- **Identificação Automática** - Tire uma foto e a IA identifica marca, modelo, cor, ano e série
+- **Google Vision API** - Tecnologia de ponta para reconhecimento de objetos
+- **Preenchimento Automático** - Campos preenchidos automaticamente após identificação
+- **Fallback Manual** - Opção de preenchimento manual sempre disponível
 
-### 🎨 **Interface Moderna**
-- 🎭 **Animações Lottie** - Introdução elegante
-- 🎨 **Design System** - Componentes consistentes
-- 📱 **PWA Ready** - Instalação como app nativo
-- 🌙 **Tema Adaptativo** - Suporte a modo escuro
-- ♿ **Acessibilidade** - ARIA labels e navegação por teclado
+### Coleções Avançadas
+- **5 Filtros Poderosos** - Organize por cor, marca, modelo, ano e série
+- **Compartilhamento Público** - Gere links únicos para compartilhar coleções
+- **Acesso Anônimo** - Outros usuários veem suas coleções sem precisar fazer login
+- **Gerenciamento Completo** - CRUD de coleções e items com permissões
 
-## 🛠️ Tecnologias
+### Upload e Armazenamento
+- **Vercel Blob** - CDN automático e rápido para suas imagens
+- **Drag & Drop** - Interface intuitiva de upload
+- **Suporte a Galeria** - Envie fotos que já tem no seu dispositivo
+- **Otimização Automática** - Imagens otimizadas para web
 
-### **Backend**
-- **PHP 8.0+** - Linguagem principal
-- **MySQL 8.0+** - Banco de dados
-- **MySQLi** - Driver de conexão
+### Autenticação e Segurança
+- **Auth.js** - Autenticação moderna e segura
+- **Email/Senha** - Registro com hash bcrypt
+- **OAuth Google** - Login social integrado
+- **Sessões Seguras** - HTTP-only cookies com refresh tokens
+- **HTTPS Obrigatório** - Em produção sempre
 
-### **Frontend**
-- **HTML5** - Estrutura semântica
-- **CSS3** - Estilos modernos com variáveis
-- **JavaScript ES6+** - Interatividade
-- **Lottie** - Animações vetoriais
+### Interface Moderna
+- **React 19 + Next.js 16** - Framework mais moderno do mercado
+- **TypeScript 100%** - Sem erros de tipo
+- **Tailwind CSS** - Estilos modernos e responsivos
+- **shadcn/ui** - Componentes acessíveis e polidos
+- **Mobile-First** - Funciona perfeitamente em qualquer dispositivo
 
-### **APIs e Serviços**
-- **ImgBB API** - Upload de imagens
-- **PWA Manifest** - Configuração de app
-- **Service Worker** - Cache offline
+## Tecnologias
 
-## 📦 Instalação
+### Frontend
+- **Next.js 16** - React framework com API routes integradas
+- **React 19** - Componentes com Server Components e hooks modernos
+- **TypeScript 5.3** - Type safety completo
+- **Tailwind CSS 3.4** - Utility-first CSS framework
+- **shadcn/ui** - Componentes React acessíveis
+- **Lucide React** - Ícones SVG modernos
 
-### **Pré-requisitos**
-- PHP 8.0 ou superior
-- MySQL 8.0 ou superior
-- Servidor web (Apache/Nginx)
-- Extensões PHP: mysqli, json, session
+### Backend
+- **Next.js API Routes** - Backend sem servidor
+- **Auth.js (NextAuth)** - Autenticação moderna
+- **Prisma 5.7** - ORM type-safe
+- **Zod** - Validação de schemas
 
-### **Passo a Passo**
+### Database & Storage
+- **PostgreSQL 15** - Banco de dados relacional
+- **Vercel Blob** - Cloud storage para imagens
+- **pgvector** - Extensão para busca vetorial (futuro)
 
-1. **Clone o repositório**
+### IA & APIs
+- **Google Vision API** - Reconhecimento de imagens
+- **Vercel AI Gateway** - Integração centralizada com modelos
+- **Vercel Workflows** - Orquestração de processamento
+
+## Quick Start
+
 ```bash
-git clone https://github.com/seu-usuario/coollects.git
-cd coollects
+# 1. Instale dependências
+npm install
+
+# 2. Configure variáveis de ambiente
+cp .env.example .env.local
+
+# 3. Configure banco de dados
+npm run db:push
+
+# 4. Inicie desenvolvimento
+npm run dev
+
+# Abra http://localhost:3000
 ```
 
-2. **Configure o banco de dados**
+## Instalação Completa
+
+### Pré-requisitos
+- Node.js 18+ e npm/pnpm/yarn
+- PostgreSQL 14+ (local ou serviço cloud como Neon)
+- Conta Vercel (opcional para deploy)
+- Chave API Google Cloud (para Vision API)
+
+### Passo a Passo
+
+1. **Clone e configure**
 ```bash
-# Acesse seu MySQL
-mysql -u root -p
-
-# Crie o banco de dados
-CREATE DATABASE coollects CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-# Execute o script de setup
-mysql -u root -p coollects < database_setup.sql
+git clone https://github.com/seu-usuario/coollects-v2.git
+cd coollects-v2
+npm install
 ```
 
-3. **Configure as credenciais**
+2. **Variáveis de Ambiente**
 ```bash
-# Copie o arquivo de exemplo
-cp config.example.php config.php
-
-# Edite com suas credenciais
-nano config.php
+cp .env.example .env.local
+# Edite .env.local com:
+# DATABASE_URL - PostgreSQL connection string
+# BLOB_READ_WRITE_TOKEN - Vercel Blob token
+# GOOGLE_CLIENT_ID - Google OAuth
+# GOOGLE_CLIENT_SECRET - Google OAuth
+# NEXTAUTH_SECRET - gerado com: openssl rand -base64 32
 ```
 
-4. **Configure o servidor web**
-```apache
-# Apache (.htaccess já incluído)
-# Certifique-se que mod_rewrite está habilitado
-```
-
-5. **Configure permissões**
+3. **Database**
 ```bash
-# Crie diretórios necessários
-mkdir log
-mkdir uploads
-chmod 755 log uploads
+npm run db:push      # Sincroniza schema
+npm run db:seed      # (Opcional) Popula dados de teste
 ```
 
-## ⚙️ Configuração
-
-### **Arquivo config.php**
-```php
-// Configurações do banco de dados
-define('HOST', 'localhost');
-define('USER', 'seu_usuario');
-define('PASS', 'sua_senha');
-define('BASE', 'coollects');
-
-// Configurações da aplicação
-define('APP_NAME', 'Coollects');
-define('APP_VERSION', '2.0.0');
-define('APP_URL', 'https://seu-dominio.com');
-
-// Configurações de segurança
-define('HASH_COST', 12);
-define('SESSION_TIMEOUT', 3600);
-```
-
-### **Variáveis de Ambiente (Opcional)**
+4. **Desenvolvimento**
 ```bash
-# .env (se implementado)
-DB_HOST=localhost
-DB_USER=seu_usuario
-DB_PASS=sua_senha
-DB_NAME=coollects
+npm run dev          # Inicia em http://localhost:3000
+npm run build        # Build para produção
+npm start            # Inicia servidor de produção
 ```
 
-### **Configurações de Sessão**
-```php
-// Configurações automáticas no config.php
-ini_set('session.cookie_httponly', 1);
-ini_set('session.cookie_secure', 1);
-ini_set('session.use_strict_mode', 1);
-```
+## Deploy
 
-## 🔐 Segurança
-
-### **Implementado**
-- ✅ **Prepared Statements** em todas as queries
-- ✅ **Hash de senhas** com bcrypt
-- ✅ **Sanitização de entrada** global
-- ✅ **Validação server-side** rigorosa
-- ✅ **Sessões seguras** com configurações adequadas
-- ✅ **Log de atividades** para auditoria
-- ✅ **Proteção contra XSS** com htmlspecialchars
-
-### **Recomendações Adicionais**
-- 🔒 **HTTPS** - Use sempre em produção
-- 🔒 **Rate Limiting** - Implemente limitação de tentativas
-- 🔒 **2FA** - Autenticação de dois fatores
-- 🔒 **Backup** - Backup regular do banco
-- 🔒 **Monitoramento** - Logs de segurança
-
-## 📱 PWA
-
-### **Características**
-- 📱 **Instalável** - Adicione à tela inicial
-- 🔄 **Offline** - Cache de recursos essenciais
-- 📲 **App-like** - Experiência nativa
-- 🔔 **Notificações** - Push notifications (futuro)
-
-### **Configuração**
-```json
-// manifest.json
-{
-  "name": "Coollects",
-  "short_name": "Coollects",
-  "description": "Sistema de Coleções",
-  "start_url": "/",
-  "display": "standalone",
-  "theme_color": "#6366f1",
-  "background_color": "#ffffff"
-}
-```
-
-## 🎨 Personalização
-
-### **Cores e Temas**
-```css
-/* style/style.css */
-:root {
-  --primary-color: #6366f1;
-  --secondary-color: #8b5cf6;
-  --success-color: #10b981;
-  --error-color: #ef4444;
-  --warning-color: #f59e0b;
-  --info-color: #3b82f6;
-}
-```
-
-### **Categorias**
-```sql
--- Adicione novas categorias
-INSERT INTO categorias (name_cat, emoji_cat, desc_cat) 
-VALUES ('Livros', '📚', 'Coleção de livros');
-```
-
-### **Ícones e Imagens**
-- Substitua arquivos em `/icons/`
-- Atualize `manifest.json`
-- Modifique `sw.js` se necessário
-
-## 🐛 Troubleshooting
-
-### **Problemas Comuns**
-
-#### **Erro de Conexão com Banco**
+### Vercel (Recomendado)
 ```bash
-# Verifique as credenciais em config.php
-# Teste a conexão
-php -r "include 'config.php'; echo 'Conexão OK';"
+# 1. Push para GitHub
+git push origin main
+
+# 2. Import no Vercel Dashboard
+# - Conecte seu repo GitHub
+# - Configure variáveis de ambiente
+# - Deploy automático
+
+# 3. Sua app está em: https://seu-projeto.vercel.app
 ```
 
-#### **Erro de Permissões**
+### Outras Plataformas
+- **Railway** - Suporte PostgreSQL integrado
+- **Render** - Deploy gratuito com banco
+- **Fly.io** - Docker-based deployment
+- **DigitalOcean** - Full control com App Platform
+
+## Estrutura do Projeto
+
+```
+coollects-v2/
+├── app/                      # Next.js App Router
+│   ├── (auth)/              # Grupo de rotas de autenticação
+│   ├── api/                 # API routes
+│   ├── collections/         # Páginas de coleções
+│   ├── items/              # Páginas de items
+│   ├── dashboard/          # Dashboard do usuário
+│   ├── layout.tsx          # Layout principal
+│   └── page.tsx            # Landing page
+│
+├── components/              # React components
+│   ├── ui/                 # Componentes base (button, card, etc)
+│   ├── auth/               # Componentes de autenticação
+│   ├── items/              # Componentes de items
+│   └── collections/        # Componentes de coleções
+│
+├── lib/                    # Utilities e configuração
+│   ├── prisma.ts          # Cliente Prisma
+│   ├── auth.ts            # Configuração Auth.js
+│   ├── schemas.ts         # Validações Zod
+│   └── services/          # Serviços (Vision, etc)
+│
+├── prisma/                # Prisma ORM
+│   └── schema.prisma      # Schema do banco
+│
+├── public/                # Assets estáticos
+└── scripts/               # Scripts utilitários
+```
+
+## Segurança
+
+### Implementado
+- **Prisma** - Prepared statements automáticas
+- **bcrypt** - Hash de senhas com custo 10
+- **Auth.js** - Sessions seguras com refresh tokens
+- **Zod** - Validação rigorosa de entrada
+- **CORS** - Configurado corretamente
+- **Rate Limiting** - No servidor (futuro)
+- **HTTPS** - Obrigatório em produção
+- **RLS (Row Level Security)** - No PostgreSQL (futuro)
+
+### Checklist Pré-Produção
+- [ ] `.env` configurado com credenciais seguras
+- [ ] `NEXTAUTH_SECRET` gerado aleatoriamente
+- [ ] Banco de dados em servidor seguro (não localhost)
+- [ ] HTTPS habilitado em todas as rotas
+- [ ] Variáveis sensíveis nunca commitadas
+- [ ] Backups automáticos do banco configurados
+
+## Documentação
+
+### Guias
+- **[START_HERE.md](./START_HERE.md)** - Comece aqui! Guia rápido
+- **[SETUP.md](./SETUP.md)** - Instalação detalhada
+- **[PROJECT_COMPLETE.md](./PROJECT_COMPLETE.md)** - Documentação completa
+- **[PHASE_1_*.md](./PHASE_1_IA_VISION.md)** - Detalhes de cada feature
+
+### Variáveis de Ambiente Necessárias
+
+```env
+# Database
+DATABASE_URL=postgresql://user:password@localhost:5432/coollects
+
+# Vercel Blob
+BLOB_READ_WRITE_TOKEN=your_token_here
+
+# Google OAuth
+GOOGLE_CLIENT_ID=xxx.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=xxx
+
+# Auth
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=generated_with_openssl
+
+# Opcional - Google Vision (se usar localmente)
+GOOGLE_CLOUD_PROJECT_ID=your_project_id
+```
+
+## Comandos Disponíveis
+
 ```bash
-# Configure permissões corretas
-chmod 755 log uploads
-chmod 644 config.php
+# Desenvolvimento
+npm run dev              # Servidor com hot reload
+npm run lint            # Lint com ESLint
+npm run type-check      # Type check TypeScript
+
+# Banco de dados
+npm run db:push         # Sincronizar schema
+npm run db:pull         # Puxar schema existente
+npm run db:generate     # Gerar tipos Prisma
+npm run db:seed         # Popular com dados de teste
+npm run db:studio       # Abrir Prisma Studio (UI do banco)
+
+# Produção
+npm run build           # Build otimizado
+npm start               # Rodar build localmente
+npm run analyze         # Analisar bundle size
 ```
 
-#### **Página em Branco**
+## Troubleshooting
+
+### Erro: "DATABASE_URL não definida"
 ```bash
-# Ative logs de erro
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+# Verifique se .env.local existe
+ls -la .env.local
+
+# Regenere se necessário
+cp .env.example .env.local
 ```
 
-#### **Upload de Imagens Não Funciona**
+### Erro: "Prisma client not found"
 ```bash
-# Verifique a API key do ImgBB
-# Teste a conexão com a API
-curl -X POST "https://api.imgbb.com/1/upload" \
-  -F "key=SUA_API_KEY" \
-  -F "image=@teste.jpg"
+# Regenere o cliente Prisma
+npm run db:generate
 ```
 
-### **Logs e Debug**
+### Erro: "Cannot find module"
 ```bash
-# Verifique logs de erro
-tail -f log/error.log
-
-# Log de atividades
-SELECT * FROM activity_log ORDER BY timestamp DESC LIMIT 10;
+# Limpe node_modules e reinstale
+rm -rf node_modules package-lock.json
+npm install
 ```
 
-## 🤝 Contribuição
-
-### **Como Contribuir**
-1. **Fork** o projeto
-2. **Crie** uma branch para sua feature
-3. **Commit** suas mudanças
-4. **Push** para a branch
-5. **Abra** um Pull Request
-
-### **Padrões de Código**
-- **PHP**: PSR-12
-- **CSS**: BEM methodology
-- **JavaScript**: ES6+ standards
-- **Commits**: Conventional Commits
-
-### **Testes**
+### Porta 3000 já em uso
 ```bash
-# Execute testes (se implementados)
-php vendor/bin/phpunit
-
-# Verifique sintaxe
-php -l arquivo.php
+# Use porta diferente
+npm run dev -- -p 3001
 ```
 
-## 📄 Licença
+### Google Vision não funciona
+```bash
+# Verifique se a API está habilitada na Google Cloud
+# Teste com curl:
+curl -X POST "https://vision.googleapis.com/v1/images:annotate?key=YOUR_KEY"
+```
 
-Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+## Roadmap Futuro
 
-## 📞 Suporte
+- [ ] Busca por similaridade visual com pgvector
+- [ ] Feed social de coleções populares
+- [ ] Sistema de favoritos global
+- [ ] Mobile app nativo (React Native)
+- [ ] API REST pública
+- [ ] Sistema de recomendações com IA
+- [ ] Modo offline com Service Workers
+- [ ] Backup automático para cloud
+- [ ] Dark mode completo
+- [ ] Multi-idioma (i18n)
 
-- 📧 **Email**: rogeriobeatz@gmail.com
-- 🐛 **Issues**: [GitHub Issues](https://github.com/seu-usuario/coollects/issues)
-- 📖 **Documentação**: [Wiki](https://github.com/seu-usuario/coollects/wiki)
+## Licença
 
-## 📈 Roadmap
+MIT - Veja [LICENSE](LICENSE) para detalhes
 
-### **v2.1.0** (Próxima versão)
-- 🔍 **Sistema de busca avançada**
-- 📊 **Estatísticas e relatórios**
-- 🔔 **Notificações push**
-- 🌙 **Modo escuro completo**
+## Autores e Créditos
 
-### **v2.2.0** (Futuro)
-- 📱 **App nativo** (React Native)
-- 🔗 **API REST** completa
-- 🤖 **Integração com IA**
-- 🌍 **Multi-idioma**
+- **Rogério Beatz** - Product Owner e Development Lead
+- **v0 by Vercel** - AI-powered implementation
+
+## Suporte e Contato
+
+- GitHub Issues para bugs e sugestões
+- Email: rogeriobeatz@gmail.com
+- Documentação: Veja [START_HERE.md](./START_HERE.md)
 
 ---
 
-<div align="center">
-  <p>Feito com ❤️ por <strong>Rogério</strong></p>
-  <p>⭐ Se este projeto te ajudou, considere dar uma estrela!</p>
-</div> 
+Feito com dedicação para a comunidade de colecionadores 🏎️
+
+Se este projeto ajudou você, considere deixar uma estrela ⭐ 

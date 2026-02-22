@@ -1,0 +1,46 @@
+# Auto detect text files and normalize line endings to LF
+* text=auto
+
+# TypeScript
+*.ts text eol=lf
+*.tsx text eol=lf
+
+# JavaScript
+*.js text eol=lf
+*.jsx text eol=lf
+*.mjs text eol=lf
+
+# JSON
+*.json text eol=lf
+
+# Configuration
+.env* text eol=lf
+tsconfig.json text eol=lf
+next.config.mjs text eol=lf
+tailwind.config.ts text eol=lf
+
+# Markdown
+*.md text eol=lf
+
+# SQL
+*.sql text eol=lf
+
+# Images
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.svg binary
+
+# Archives
+*.zip binary
+*.gz binary
+*.tar binary
+
+# Prisma
+schema.prisma text eol=lf
+
+# Old PHP files (archived)
+old/** export-ignore

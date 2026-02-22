@@ -1,24 +1,35 @@
-# Configuração sensível
-config.php
+# Environment variables
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Logs
-log/
-*.log
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+/yarn.lock
+package-lock.json
+pnpm-lock.yaml
+
+# Testing
+coverage/
+.nyc_output/
+
+# Next.js
+/.next/
+/out/
+.next/
+/dist/
+/build/
+
+# Misc
+*.log*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# Arquivos temporários
-*.tmp
-*.temp
-*.cache
-
-# Arquivos de sistema
+lerna-debug.log*
 .DS_Store
 Thumbs.db
 desktop.ini
@@ -27,43 +38,28 @@ desktop.ini
 .Trashes
 ehthumbs.db
 
-# IDEs e editores
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
+*.sublime-workspace
 
-# Arquivos de upload
-uploads/
-temp/
+# Vercel
+.vercel/
 
-# Arquivos de backup
-*.bak
-*.backup
-
-# Dependências
-node_modules/
-vendor/
-/yarn.lock
-/package-lock.json
-/pnpm-lock.yaml
-
-# Arquivos de build
-dist/
-build/
-.next/
-out/
-
-# Arquivos de sessão PHP
-sessions/
-
-# Arquivos de cache
-cache/
-
-# Prisma
+# Database
 prisma/dev.db
 prisma/dev.db-journal
 
-# Testing
-coverage/ 
+# Temporary files
+*.tmp
+*.temp
+*.cache
+tmp/
+temp/
+
+# Old PHP files (archived in /old folder)
+# This is a Next.js project - no PHP files in root
+old/ 
