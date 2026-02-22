@@ -1,0 +1,154 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?   // For email/password auth
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  accounts      Account[]
+  sessions      Session[]
+  items         Item[]
+  collections   Collection[]
+  favorites     Favorite[]
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  sessionToken String   @unique
+  userId    String
+  expires   DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// Items (collectibles)
+model Item {
+  id          String   @id @default(cuid())
+  userId      String
+  name        String
+  description String?
+  imageUrl    String?
+  
+  // Metadata for filtering
+  color       String?
+  brand       String?
+  model       String?
+  year        Int?
+  series      String?
+  condition   String?   // "mint", "near-mint", "excellent", "good", "fair", "poor"
+  value       Float?
+  
+  // Vector embedding for similarity search (future use with pgvector)
+  // embedding   Vector?   @db.Vector(1536)
+  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  collections CollectionItem[]
+  favorites   Favorite[]
+
+  @@index([userId])
+  @@index([brand])
+  @@index([color])
+  @@index([year])
+}
+
+// Collections (groups of items)
+model Collection {
+  id          String    @id @default(cuid())
+  userId      String
+  name        String
+  description String?
+  imageUrl    String?
+  isPublic    Boolean   @default(false)
+  shareToken  String?   @unique // For public sharing
+  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  user        User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items       CollectionItem[]
+
+  @@index([userId])
+  @@index([shareToken])
+}
+
+// Join table for Collection <-> Item (many-to-many)
+model CollectionItem {
+  collectionId String
+  itemId       String
+  
+  addedAt      DateTime @default(now())
+
+  collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  item         Item       @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  @@id([collectionId, itemId])
+  @@index([collectionId])
+  @@index([itemId])
+}
+
+// Favorites (user can favorite items from public collections)
+model Favorite {
+  id      String  @id @default(cuid())
+  userId  String
+  itemId  String
+  
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  item    Item    @relation(fields: [itemId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, itemId])
+  @@index([userId])
+  @@index([itemId])
+}
