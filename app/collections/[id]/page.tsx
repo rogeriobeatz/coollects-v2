@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { ItemCard } from '@/components/items/ItemCard'
 import { CollectionFilters } from '@/components/collections/CollectionFilters'
+import { CollectionHeader } from '@/components/collections/CollectionHeader'
 
 export const metadata = {
   title: 'Detalhes da Coleção - Coollects',
@@ -81,20 +82,12 @@ export default async function CollectionDetailPage({
       </header>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-8">
-          <h2 className="text-4xl font-bold mb-2">{collection.name}</h2>
-          {collection.description && (
-            <p className="text-muted-foreground text-lg">{collection.description}</p>
-          )}
-          <div className="flex gap-2 mt-4">
-            <Link href={`/collections/${collection.id}/edit`}>
-              <Button>Editar</Button>
-            </Link>
-            <Link href={`/collections/${collection.id}/items/add`}>
-              <Button variant="secondary">Adicionar Items</Button>
-            </Link>
-          </div>
-        </div>
+        <CollectionHeader
+          id={collection.id}
+          name={collection.name}
+          description={collection.description}
+          itemCount={allCollectionItems.length}
+        />
 
         {allCollectionItems.length > 0 && (
           <CollectionFilters

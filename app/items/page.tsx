@@ -52,17 +52,27 @@ export default async function ItemsPage() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold">Meus Items</h2>
-          <Link href="/items/new">
-            <Button>Novo Item</Button>
-          </Link>
+          <div className="flex gap-2">
+            <Link href="/items/create">
+              <Button>Novo Item com IA</Button>
+            </Link>
+            <Link href="/items/new">
+              <Button variant="outline">Manual</Button>
+            </Link>
+          </div>
         </div>
 
         {items.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-muted-foreground mb-4">Você ainda não adicionou nenhum item.</p>
-            <Link href="/items/new">
-              <Button>Adicionar Primeiro Item</Button>
-            </Link>
+            <div className="flex gap-2 justify-center">
+              <Link href="/items/create">
+                <Button>Adicionar com IA</Button>
+              </Link>
+              <Link href="/items/new">
+                <Button variant="outline">Preenchimento Manual</Button>
+              </Link>
+            </div>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
